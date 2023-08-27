@@ -16,7 +16,7 @@ class CheckoutController extends Controller
 
         $buyBy = '';
         
-        if ($request->query()['buyby']) {
+        if (isset($request->query()['buyby'])) {
             $buyBy = $request->query()['buyby'];
 
             $user = User::find($buyBy);
