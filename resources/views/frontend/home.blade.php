@@ -19,9 +19,17 @@
         <!-- End HomePage -->
         <!-- Start BuyNow Btn -->
         <div class="buyNow text-center">
-            <a href="courseDetails.html"> <button class="btn main-btn fw-bold">اشتري الان
-                </button>
-            </a>
+
+
+            @isset($courses[0]->id)
+                <a href="{{ route('course.details', $courses[0]->id) }}"> <button class="btn main-btn fw-bold">اشتري الان
+                    </button>
+                </a>
+            @else
+                <a href="{{ route('home') }}"> <button class="btn main-btn fw-bold">اشتري الان
+                    </button>
+                </a>
+            @endisset
         </div>
         <!-- End BuyNow Btn -->
         <!-- Start Icons Banner -->
@@ -79,9 +87,9 @@
             </div>
             <div class="cards row mt-5 gap-3 justify-content-center position-relative">
                 <!-- <div class="arrows d-flex justify-content-between cursor-pointer">
-                                <i class="fa-solid fa-arrow-left fa-rotate-180 rounded-2 fs-3 position-absolute right"></i>
-                                <i class="fa-solid fa-arrow-left fs-3 position-absolute rounded-2 left "></i>
-                            </div> -->
+                                        <i class="fa-solid fa-arrow-left fa-rotate-180 rounded-2 fs-3 position-absolute right"></i>
+                                        <i class="fa-solid fa-arrow-left fs-3 position-absolute rounded-2 left "></i>
+                                    </div> -->
                 <div class="row mt-5 gap-3 justify-content-center ">
                     <div class="card col-md-3 p-0 cardCourse border-0" data-aos="flip-left" data-aos-delay="500">
                         <div class="images">
@@ -180,12 +188,11 @@
             </div>
             <div class="courses">
                 @foreach ($courses as $course)
-                    <a href="{{ route('course.details',$course->id) }}">
+                    <a href="{{ route('course.details', $course->id) }}">
                         <div class="card col-md-3 p-0 cardCourse mt-4  mx-auto cursor-pointer border-0"
                             data-aos="flip-left" data-aos-delay="500">
                             <div class="courseImage">
-                                <img src="{{ $course->image }}" class="card-img"
-                                    alt="PythonImg">
+                                <img src="{{ $course->image }}" class="card-img" alt="PythonImg">
                             </div>
                             <div class="card-body ">
 
@@ -198,7 +205,8 @@
                                         <span class="text-start">EGP</span>
                                     </h3>
                                     <div class="buy">
-                                        <a href="{{ route('checkout',$course->id) }}"><button class="btn main-btn fw-bold">اشتري
+                                        <a href="{{ route('checkout', $course->id) }}"><button
+                                                class="btn main-btn fw-bold">اشتري
                                                 الان</button></a>
                                     </div>
                                 </div>

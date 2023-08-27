@@ -25,6 +25,7 @@
                                             <h5 class="fw-bold text-end ">دورة تعلم تطبيقات الويب</h5>
                                         </div>
                                     </div>
+                                    
                                     <hr class="mb-4">
                                     <div class="d-flex justify-content-between p-2">
                                         <p class="fw-bold">الخصم:</p>
@@ -79,14 +80,14 @@
                                         <div class="form-outline mb-5" id="walletData">
                                             <label class="form-label" for="phone">رقم الهاتف</label>
                                             <input type="text" class="form-control form-control-lg" name="phone"
-                                                placeholder=' ادخل رقم الهاتف' id="phone" />
+                                                placeholder=' ادخل رقم الهاتف' id="phone" max="11"/>
                                             <input type="hidden" value="{{ $course->id }}" name="course_id" />
                                             <input type="hidden" value="{{ $buyBy }}" name="buyBy" />
                                         </div>
                                         <button type="submit" class="btn main-btn btn-block fw-bold">شراء الان</button>
                                     </form>
                                     <h5 class="fw-bold mb-5 pb-5" id="backToCourses">
-                                        <a href="index.html#currentCourses"><i class="fas fa-angle-left me-2"></i>الرجوع الي
+                                        <a href="{{ route('course.details',$course->id) }}"><i class="fas fa-angle-left me-2"></i>الرجوع الي
                                             الدوره</a>
                                     </h5>
                                 </div>
@@ -100,7 +101,13 @@
                                 @endforeach
                             </ul>
                         </div>
+                    @endif    
+                    @if (Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('error') }}
+                        </div>
                     @endif
+                  
                     </div>
                 </div>
             </div>

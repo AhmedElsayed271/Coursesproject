@@ -3,6 +3,7 @@
 @section('title', 'Course Details')
 
 @section('content')
+
     <section class="courseDetails marginTop">
         <div class="contentDetails w-100 h-50 p-5">
             <h2 class="card-title fw-bold text-end">دورة تعلم تطبيقات الويب</h2>
@@ -37,8 +38,7 @@
             <div class="coursePrice">
                 <h4 class="fw-bold">السعر : {{ $course->price }} <span class="text-start">EGP</span></h4>
                 <div class="buy">
-                    <a href="checkout.html"><button class="btn main-btn fw-bold">اشتري الان</button></a>
-                    <a href="checkout.html"><button class="btn main-btn fw-bold">اشتري الان</button></a>
+                    <a href="{{ route('checkout',$course->id) }}"><button class="btn main-btn fw-bold">اشتري الان</button></a>
                 </div>
             </div>
         </div>

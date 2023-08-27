@@ -43,7 +43,7 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                @if($courses)
+                                @if($courses->count() > 0)
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>

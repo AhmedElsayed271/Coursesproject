@@ -47,7 +47,7 @@ class CoursesController extends Controller
         'name' => $request->name,
         'descriptoin' => $request->description,
         'price' => $request->price,
-        'priold_pricece' => $request->old_price,
+        'old_price' => $request->old_price,
         'photo' => $photo
 
        ]);
@@ -110,7 +110,7 @@ class CoursesController extends Controller
 
         $course->update([
             'name' => $request->name,
-            'descriptoin' => $request->descritpoin,
+            'descriptoin' => $request->description,
             'price' => $request->price,
             'old_price' => $request->old_price,
             'photo' => $photo

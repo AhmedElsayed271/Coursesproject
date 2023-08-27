@@ -10,7 +10,7 @@
     @enderror
     <div class="form-group">
         <label for="exampleInputEmail1">Description</label>
-       <textarea class="form-control" name="description" id="" >{{ old('description', $course->name ?? '') }}</textarea>
+       <textarea class="form-control" name="description" id="" >{{ old('description', $course->descriptoin ?? '') }}</textarea>
     </div>
     @error('description')
         <div class="text-danger">{{ $message }}</div>

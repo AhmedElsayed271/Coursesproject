@@ -60,6 +60,10 @@ class PaymentPaymobController extends Controller
             'buyBy' =>  $request->buyBy,
         ]);
 
+        if (!$response['redirect_url']) {
+            return redirect()->back()->with(['error' => 'هذا الرقم غير صحيح او لا يحتوي على محفظة']);
+        }
+
         return Redirect::to($response['redirect_url']);
     }
 
