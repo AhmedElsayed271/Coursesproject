@@ -108,7 +108,7 @@ class PaymentPaymobController extends Controller
                 "apartment" => "803",
                 "email" => $user->email,
                 "floor" => "42",
-                "first_name" => $user->first_name,
+                "first_name" => $user->first_name ?? "NA",
                 "street" => "Ethan Land",
                 "building" => "8028",
                 "phone_number" => "+86(8)9135210487",
@@ -116,7 +116,7 @@ class PaymentPaymobController extends Controller
                 "postal_code" => "01898",
                 "city" => "Cairo",
                 "country" => "CR",
-                "last_name" => $user->first_name,
+                "last_name" => $user->last_name ?? "NA",
                 "state" => "Utah"
             ],
             "integration_id" => $integration_id,
