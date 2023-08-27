@@ -19,7 +19,7 @@ class PaymentPaymobController extends Controller
     public function PayByPaymob(Request $request)
     {
 
-
+        
         $validate = $request->validate([
             'paymentMethod' => 'required|in:wallet,credit',
             'phone' => ['required_if:paymentMethod,wallet'],

@@ -26,7 +26,7 @@
                             </button>
                             <p class="small fw-bold mt-2 pt-1 mb-0">
                                 ليس لديك حساب :
-                                <a href="/signup.html" class="text-danger"> انشاء حساب </a>
+                                <a href="{{route('register')}}" class="text-danger"> انشاء حساب </a>
                             </p>
                             <div class="text-center">
                                 <hr class="my-4" />
