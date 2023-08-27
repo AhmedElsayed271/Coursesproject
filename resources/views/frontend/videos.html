@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courza</title>
+    <!-- Bootstrap Css File -->
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
+    <!-- Fontawesome Library -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Render Elements Normalize -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Poppins:wght@200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,500&display=swap"
+        rel="stylesheet" />
+
+    <!--Main Css File -->
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body dataSrc="video">
+    <div class="container-fluid">
+        <header class="w-100 bg-body" style="height: 80px;">
+            <button class="mt-3 border-0"> <a href="profile.html" class="btn main-btn float-left"><i
+                        class="fa-solid fa-arrow-right"></i>
+                    العودة للدورة</a>
+            </button>
+        </header>
+        <div class="row">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="col-md-4 col-lg-3 d-md-block ">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false">
+                                كورس Html
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseOne" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false">
+                                كورس CSS
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseTwo" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false">
+                                كورس Bootstrap
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseThree" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false">
+                                كورس JavaScript
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseFour" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false">
+                                كورس Php
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseFive" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false">
+                                كورس Python
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseSix" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header d-flex justify-content-around align-items-center">
+                            <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false">
+                                كورس How to Work
+                            </button>
+                            <i class="fa-solid fa-chevron-down fs-5 ms-3 cursor-pointer"
+                                data-bs-target="#panelsStayOpen-collapseSeven" data-bs-toggle="collapse"></i>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="HtmlVideos">
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part1.mp4">
+                                        مقدمه عن لغه Html</p>
+                                </div>
+                                <div class="videoBox d-flex">
+                                    <p class="fw-bold m-3 cursor-pointer video-title" data-video-src="videos/part2.mp4">
+                                        الجزء التاني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 mt-2 vh-100">
+                <!-- <video src="videos/part1.mp4" controls autoplay style="width: 100%;" id="mainVideo">
+                    المتصفح الخاص بك لايدعم نوع الفديو,من فضلك استخدم متصفح اخر
+                </video> -->
+                <p class="fw-bold">مقدمه عن لغه  Html</p>
+
+                <video id="player" src="videos/part1.mp4" playsinline controls>
+                </video> 
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap Js -->
+    <script src="css/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+    <!-- Main Js File -->
+    <script src="js/app.js"></script>
+</body>

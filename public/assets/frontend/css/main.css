@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+  scroll-behavior: smooth;
+  /* user-select: none; */
+  text-transform: capitalize;
+  
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+:root {
+  --main-color: #d0004a;
+  --primary-color: #fff;
+  --light-color: #f10356;
+  --dark-color:#060E1F;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb {
+  height: 20px;
+  background-color: var(--main-color);
+}
+.marginTop{
+  margin-top: 100px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.ls{
+  letter-spacing: 1.2px;
+}
+.navbar-toggler:focus,
+.form-control:focus,.form-select:focus {
+  box-shadow: none;
+}
+.homePage {
+  background: url(../images/homeBanner.AVIF);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+}
+.title{
+  position: relative;
+  width: fit-content;
+}
+.title::after{
+  content: "";
+  position: absolute;
+  width: 50%;
+  background-color: #d0004a;
+  height: 2px;
+  transition: all .4s;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -ms-transition: all .4s;
+  -o-transition: all .4s;
+}
+.title:hover::after {
+  width: 100%;
+}
+.banner {
+  background: url(../images/banner.AVIF);
+  background-position: center;
+  background-size: cover;
+}
+.main-btn {
+  background-color: var(--main-color);
+  color: var(--primary-color) !important;
+}
+.main-color{
+  color: var(--main-color);
+}
+.main-btn:hover {
+  background-color: var(--light-color) !important;
+}
+.display-none{
+    display: none;
+}
+#scrollBtn button{
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.course-image {
+  max-width: 100%;
+}
+.right,.left{
+  top: 50%;
+  padding: 5px;
+  background-color: var(--main-color);
+  color: var(--primary-color);
+}
+.right{
+  right: 5%;
+}
+.left{
+  left: 5%;
+}
+.cardCourse{
+  transition: .3s linear;
+  -webkit-transition: .3s linear;
+  -moz-transition: .3s linear;
+  -ms-transition: .3s linear;
+  -o-transition: .3s linear;
+}
+.cardCourse:hover{
+  transform: scaleY(1.06);
+  -webkit-transform: scaleY(1.06);
+  -moz-transform: scaleY(1.06);
+  -ms-transform: scaleY(1.06);
+  -o-transform: scaleY(1.06);
+}
+.contentDetails{
+  background-color: var(--dark-color);
+  color: var(--primary-color);
+}
+.courseInfo{
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+.cardContent h5,.cardContent p,.cardContent h3, #backToCourses a{
+  color: var(--dark-color);
+}
+.fap{
+  color: var(--main-color);
+}
+hr{
+  height: 2px;
+  background-color: var(--main-color);
+  width: 50%;
+  margin: 0 auto;
+}
+.authIcons button i{
+    color: var(--primary-color);
+}
+.authIcons button .fa-facebook-f {
+  background-color: #197ECE;
+}
+.authIcons button .fa-google {
+  background-color: #DD4B39;
+}
+/* Videos Page */
+.accordion-button::after {
+  display: none;
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #fff;
+}
+aside{
+  overflow-y: scroll;
+}
+.buyNow {
+  animation: topDown 1s linear 0s infinite alternate-reverse both;
+  -webkit-animation: topDown 1s linear 0s infinite alternate-reverse both;
+}
+
+@keyframes topDown {
+  0% {
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -o-transform: translateY(-15px);
+}
+
+  100% {
+    transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -o-transform: translateY(15px);
+}
+}
+/* Marketing Page */
+.userLink input,select,#phoneNumer,#moneyQty{
+  max-width: 300px;
+  border: 2px solid var(--main-color) !important;
+}
+.userLink input:focus {
+  border: 2px solid var(--main-color);
+}
+
+
+.userLink i{
+  right: 10px;
+  top:8px;
+  
+}
+footer{
+  padding: 80px 0px;
+}
+
+#linkCourse {
+  text-transform: lowercase;
+}
