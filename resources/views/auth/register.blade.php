@@ -43,15 +43,16 @@
                         </button>
                     </form>
                     <div class="text-center">
-                        <hr class="my-2" />
-                        <p> يمكنك التسجيل بإستخدام</p>
-                        <div class="authIcons my-2">
-                            <button type="button" class="btn btn-link btn-floating mx-1 ">
-                                <i class="fab fa-facebook-f fs-5 p-2 "></i>
-                            </button>
-                            <button type="button" class="btn btn-link btn-floating mx-1  rounded">
+                        <hr class="my-4" />
+
+                        <p>تسجيل دخول باستخدام :</p>
+                        <div class="authIcons">
+                            <a href="{{ route('auth.socialite.redirect','facebook') }}" class="btn btn-link btn-floating mx-1 rounded">
+                                <i class="fab fa-facebook-f fs-5 p-2 rounded"></i>
+                            </a>
+                            <a href="{{ route('auth.socialite.redirect','google') }}" class="btn btn-link btn-floating mx-1  rounded">
                                 <i class="fab fa-google fs-5 p-2 rounded"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
