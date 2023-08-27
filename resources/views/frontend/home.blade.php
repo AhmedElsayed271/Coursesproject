@@ -197,9 +197,8 @@
                             <div class="card-body ">
 
                                 <div class="cardContent">
-                                    <h5 class="card-title fw-bold text-end ">دورة تعلم تطبيقات الويب</h5>
-                                    <p class="owener text-start my-1">ali ahmed</p>
-                                    <p class="card-text text-start">Html,Css,Bootstrap,JavaScript,ReactJS<br>Php,Python</p>
+                                    <h5 class="card-title fw-bold text-end ">{{ $course->name }}</h5>
+                                   
                                     <h3 class="fw-bold h6">السعر : <del>{{ $course->old_price }}</del>
                                         {{ $course->price }}
                                         <span class="text-start">EGP</span>

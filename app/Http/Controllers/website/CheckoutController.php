@@ -15,9 +15,9 @@ class CheckoutController extends Controller
         $course = Course::findOrFail($course_id);
 
         $buyBy = '';
-
-        if ($request->buyBy) {
-            $buyBy = $request->buyBy;
+        
+        if ($request->query()['buyby']) {
+            $buyBy = $request->query()['buyby'];
 
             $user = User::find($buyBy);
 

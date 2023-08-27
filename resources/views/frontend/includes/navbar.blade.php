@@ -19,9 +19,11 @@
                     <a class="nav-link active fs-6 fw-bold" aria-current="page"
                         href="{{ route('home') }}#ourTarget">اهدافنا</a>
                 </li>
+                @if(Auth::guard('admin')->check())
                 <li class="nav-item">
                     <a class="nav-link active fs-6 fw-bold" aria-current="page" href="{{ route('dashboard') }}">لوحه التحكم</a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link active fs-6 fw-bold" aria-current="page" href="{{ route('home') }}#contactUs">تواصل
                         معنا</a>
