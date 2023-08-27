@@ -4,9 +4,8 @@
   box-sizing: border-box;
   font-family: "Cairo", sans-serif;
   scroll-behavior: smooth;
-  /* user-select: none; */
-  text-transform: capitalize;
-  
+  user-select: none;
+
 }
 html,
 body {
@@ -195,7 +194,7 @@ aside{
 .userLink i{
   right: 10px;
   top:8px;
-  
+
 }
 footer{
   padding: 80px 0px;

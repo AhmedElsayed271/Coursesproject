@@ -86,10 +86,6 @@
                 <h2 class="fw-bold">خطط الدراسة</h2>
             </div>
             <div class="cards row mt-5 gap-3 justify-content-center position-relative">
-                <!-- <div class="arrows d-flex justify-content-between cursor-pointer">
-                                        <i class="fa-solid fa-arrow-left fa-rotate-180 rounded-2 fs-3 position-absolute right"></i>
-                                        <i class="fa-solid fa-arrow-left fs-3 position-absolute rounded-2 left "></i>
-                                    </div> -->
                 <div class="row mt-5 gap-3 justify-content-center ">
                     <div class="card col-md-3 p-0 cardCourse border-0" data-aos="flip-left" data-aos-delay="500">
                         <div class="images">
@@ -97,7 +93,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">20</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">Html-Css Course</h5>
                             </div>
                             <p class="card-text"> سوف تتعلم في هذه الدوره أساسيات تطوير الويب بأسلوب مبسّط ومحترف. اكتسب
@@ -111,7 +106,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">12</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">Java Script Course</h5>
                             </div>
                             <p class="card-text"> سوف تكتشف فنون تطوير الويب من الصفر إلى الاحتراف لبناء تجارب مستخدم
@@ -126,7 +120,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">10</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">ReactJs Course</h5>
                             </div>
                             <p class="card-text"> ستكتشف عالم تطوير الواجهات الحديثة مع ReactJs,لبناء تطبيقات متفاعلة
@@ -143,7 +136,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">4</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">Bootstrap Course</h5>
                             </div>
                             <p class="card-text">من خلال دراسة دورة Bootstrap، ستمكن نفسك من تطوير واجهات مستخدم متجاوبة
@@ -157,7 +149,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">12</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">Php Course</h5>
                             </div>
                             <p class="card-text">من خلال دراسة دورة PHP، ستكتسب المعرفة والمهارات اللازمة لتطوير تطبيقات
@@ -171,7 +162,6 @@
                         </div>
                         <div class="card-body">
                             <div class="cardContent d-flex justify-content-between ">
-                                <span class="fw-bold ls"><span class="duration">8</span>hours</span>
                                 <h5 class="card-title fw-bold text-start">Python Course</h5>
                             </div>
                             <p class="card-text"> سيتمكن الطلاب من تطبيق مفاهيم Python بشكل عملي، مما يمكّنهم من تطوير
@@ -198,7 +188,7 @@
 
                                 <div class="cardContent">
                                     <h5 class="card-title fw-bold text-end ">{{ $course->name }}</h5>
-                                   
+
                                     <h3 class="fw-bold h6">السعر : <del>{{ $course->old_price }}</del>
                                         {{ $course->price }}
                                         <span class="text-start">EGP</span>
