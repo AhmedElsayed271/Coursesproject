@@ -45,7 +45,7 @@ return [
         ],
         'upload' => [
             'driver' => 'local',
-            'root' => public_path('/assets/dashboard/upload'),
+            'root' => base_path('/assets/dashboard/upload'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
