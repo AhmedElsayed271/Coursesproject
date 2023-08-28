@@ -29,7 +29,7 @@
                                 <div class="accordion-body" id="HtmlVideos">
                                     @foreach ($section->videos as $video)
                                         <div class="videoBox d-flex">
-                                            <p class="fw-bold m-3 cursor-pointer video-title"
+                                            <p data-name='{{ $video->name }}' class="fw-bold m-3 cursor-pointer video-title"
                                                 data-video-src="{{ asset('assets/dashboard/upload/') . '/' . $video->video }}">
                                                 {{ $video->name }}</p>
                                         </div>

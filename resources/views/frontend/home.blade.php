@@ -188,7 +188,7 @@
 
                                 <div class="cardContent">
                                     <h5 class="card-title fw-bold text-end ">{{ $course->name }}</h5>
-
+                                    <p>{{ $course->descriptoin }}</p>
                                     <h3 class="fw-bold h6">السعر : <del>{{ $course->old_price }}</del>
                                         {{ $course->price }}
                                         <span class="text-start">EGP</span>
@@ -235,21 +235,34 @@
                 <h2 class="fw-bold">تواصل معنا</h2>
             </div>
             <div class="contactForm my-5">
-                <form class="form my-3">
+                <form class="form my-3" action="{{ route('contact.create') }}" method="post">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-6 my-2">
-                            <input type="text" class="form-control" placeholder="الاسم" name="firstName" />
+                            <input type="text" class="form-control" placeholder="الاسم" name="name" />
                         </div>
                         <div class="col-md-6 my-2">
                             <input type="email" class="form-control" placeholder="البريد الالكتروني" name="email" />
                         </div>
                     </div>
                     <div class="my-2">
-                        <textarea class="form-control" placeholder="اترك استفسارك هنا وسيتم الرد عليك " name="textcontent"></textarea>
+                        <textarea class="form-control" placeholder="اترك استفسارك هنا وسيتم الرد عليك " name="message" rows="6"></textarea>
                     </div>
-                    <button class="btn main-btn fw-bold"> ارسال</button>
+                    <button class="btn main-btn fw-bold" type="submit"> ارسال</button>
                 </form>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif 
+        @if(Session::has('success'))
+            <div class="alert alert-success">{{ Session::get('success') }}</div>
+        @endif
         </section>
     </div>
 @endsection

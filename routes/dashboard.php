@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\dashboard\ContactUsController;
 use App\Http\Controllers\Dashboard\CoursesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\OrderController;
+use App\Http\Controllers\dashboard\RequestWithdrawalWalletController;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\VideoController;
 
@@ -21,7 +23,7 @@ use App\Http\Controllers\Dashboard\VideoController;
 
 Route::group(['middleware' => 'auth:admin'], function () {
 
-    Route::get('/', [DashboardController::class,'index'])->name('dashboard');  
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('categories', CategoryController::class)->except(['show']);
     Route::resource('courses', CoursesController::class)->except(['show']);
@@ -45,9 +47,21 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::post('videos/update/{video_id}', [VideoController::class, 'update'])->name('videos.update');
     Route::delete('videos/destory/{video_id}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('orders', [OrderController::class, 'index'])->name('order.index');
+    Route::get('request-withdrawal', [RequestWithdrawalWalletController::class, 'index'])->name('request.withdrawal.index');
+    Route::get('request-withdrawal/Accept', [RequestWithdrawalWalletController::class, 'accept'])->name('request.withdrawal.accept');
+    Route::get('contact-us/index', [ContactUsController::class, 'index'])->name('contact.index');
+    Route::delete('contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact.delete');
+});
+Route::group(['middleware' => 'auth:web'], function () {
 
+    Route::post('request-withdrawal/create', [RequestWithdrawalWalletController::class, 'create'])->name('request.withdrawal.create');
+
+    Route::post('contact-us/create', [ContactUsController::class, 'create'])->name('contact.create');;
 });
 
-Route::group(['middleware' => 'guest:admin'], function () {
 
+
+
+
+Route::group(['middleware' => 'guest:admin'], function () {
 });

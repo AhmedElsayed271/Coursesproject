@@ -44,17 +44,32 @@
                     <h2 class="h5 fw-bold py-1">الرصيد الحالي : <span id="moneyWallet">{{ Auth::user()->wallet }}</span>
                         جنيه</h2>
                     <div class="mb-5" id="moneyHaveing">
-                        <div class="form-outline mb-3" id="walletData">
-                            <input type="text" class="form-control " placeholder=' ادخل رقم الهاتف' id="phoneNumer"
-                                required max="11" min="11" />
-                        </div>
-                        <div class="form-outline mb-3" id="walletData">
-                            <input type="number" min="0" class="form-control " placeholder='حدد الملغ المراد سحبه'
-                                id="moneyQty" required />
-                        </div>
-                        <button type="submit" id="withdrawBtn" class="btn main-btn btn-block fw-bold">سحب
-                            الرصيد</button>
+                        <form action="{{ route('request.withdrawal.create') }}" method="post">
+                            @csrf
+                            <div class="form-outline mb-3" id="walletData">
+                                <input type="text" name="phone" class="form-control " placeholder=' ادخل رقم الهاتف'
+                                    id="phoneNumer" />
+                            </div>
+                            <div class="form-outline mb-3" id="walletData">
+                                <input type="number" name="amount" class="form-control "
+                                    placeholder='حدد الملغ المراد سحبه' id="moneyQty" />
+                            </div>
+                            <button type="submit" id="withdrawBtn" class="btn main-btn btn-block fw-bold">سحب
+                                الرصيد</button>
+                        </form>
                     </div>
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">{{ Session::get('success') }}</div>
+                    @endif
                 </div>
             </div>
         </div>

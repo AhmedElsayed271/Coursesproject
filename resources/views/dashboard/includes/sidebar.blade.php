@@ -66,6 +66,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="{{ route('contact.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Complaints</p>
+          </a>
+        </li>
+        <li class="nav-item">
             <form action="{{ route('logoutAdmin') }}" method="post">
                 @csrf
                 <button class="nav-link" type="submit" style="border: 0;

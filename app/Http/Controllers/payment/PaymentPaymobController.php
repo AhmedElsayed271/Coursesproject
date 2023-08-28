@@ -29,7 +29,12 @@ class PaymentPaymobController extends Controller
 
         $user = Auth::guard('web')->user();
 
+        $checkifUserbuyCourse = UserBuyCourse::where(['user_id' => $user->id,'course_id' => $course->id])->first();
 
+        if (!empty($checkifUserbuyCourse))
+        {
+            return redirect()->back()->with(['error' => 'لقد اشتريت هذا الكوبس بالفعل']);
+        }
 
 
         if ($request->paymentMethod == 'credit') {
@@ -69,6 +74,8 @@ class PaymentPaymobController extends Controller
 
     public function paymentStepsIntegration($course, $user, $integration_id)
     {
+
+
         $response = Http::withHeaders([
 
             "Content-Type" => "application/json",
@@ -107,7 +114,7 @@ class PaymentPaymobController extends Controller
                 "apartment" => "803",
                 "email" => $user->email,
                 "floor" => "42",
-                "first_name" => $user->first_name ?? "NA",
+                "first_name" => $user->first_name ?? "mohammed",
                 "street" => "Ethan Land",
                 "building" => "8028",
                 "phone_number" => "+86(8)9135210487",
@@ -115,13 +122,15 @@ class PaymentPaymobController extends Controller
                 "postal_code" => "01898",
                 "city" => "Cairo",
                 "country" => "CR",
-                "last_name" => $user->last_name ?? "NA",
+                "last_name" => $user->last_name ?? "ahmed",
                 "state" => "Utah"
             ],
             "integration_id" => $integration_id,
             "lock_order_when_paid" => "false"
 
         ]);
+
+        $response;
 
         $token = $response['token'];
 
@@ -154,71 +163,7 @@ class PaymentPaymobController extends Controller
 
     public function state(Request $request)
     {
-
-
-        $amount_cents                           = $request->amount_cents;
-        $created_at                             = $request->created_at;
-        $currency                               = $request->currency;
-        $error_occured                          = $request->error_occured;
-        $has_parent_transaction                 = $request->has_parent_transaction;
-        $obj_id                                 = $request->id;
-        $integration_id                         = $request->integration_id;
-        $is_3d_secure                           = $request->is_3d_secure;
-        $is_auth                                = $request->is_auth;
-        $is_capture                             = $request->is_capture;
-        $is_refunded                            = $request->is_refunded;
-        $is_standalone_payment                  = $request->is_standalone_payment;
-        $is_voided                              = $request->is_voided;
-        $order_id                               = $request->id;
-        $owner                                  = $request->owner;
-        $pending                                = $request->pending;
-        $source_data_pan                        = $request->source_data_pan;
-        $source_data_sub_type                   = $request->source_data_sub_type;
-        $source_data_type                       = $request->source_data_type;
-        return $success                                = $request->success;
-
-
-        $str = $amount_cents . $created_at . $currency . $error_occured . $has_parent_transaction . $obj_id . $integration_id . $is_3d_secure . $is_auth . $is_capture . $is_refunded . $is_standalone_payment . $is_voided . $order_id . $owner . $pending . $source_data_pan . $source_data_sub_type . $source_data_type . $success;
-
-        $secure_hash = $request->hmac;
-
-        $hamc = hash_hmac('sha512', $str, 'BE1EDE20CEDC0DEF69ABFFCA5B4971D0');
-
-        if ($hamc == $secure_hash) {
-           return "good"; 
-        }
-        return $hamc . '<br>' . $secure_hash;
-        // if ($success && $request->hmac) {
-
-        //     $order = Order::where('order_id', $order)->first();
-        //     $order->update([
-        //         'transaction_id' => $transaction_id,
-        //         'payment_method' => 'paymob',
-        //         'payment_type' => $source_data_type,
-        //         'status' => 'success',
-        //     ]);
-
-        //     if ($order->buyBy != null) {
-
-        //         $user = User::find($order->buyBy);
-        //         $rate = 20 / 100;
-
-        //         $increment = $rate * $order->price;
-
-        //         $user->increment('wallet', $increment);
-        //     }
-
-        //     return $order;
-        // }
-        // $order = Order::where('order_id', $order)->first();
-        // $order->update([
-        //     'transaction_id' => $transaction_id,
-        //     'payment_method' => 'paymob',
-        //     'payment_type' => $source_data_type,
-        //     'status' => 'failed',
-        // ]);
-
-        // return  $order;
+        return redirect()->route('profile.index');
     }
 
     function paymobCallback(Request $request)

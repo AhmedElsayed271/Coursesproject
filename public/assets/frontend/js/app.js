@@ -98,5 +98,27 @@ if (marketing) {
   };
 }
 
+const elementVideos = document.querySelectorAll('[data-name]');
+
+if (elementVideos) {
+
+    for(i = 0;i  < elementVideos.length; i++) {
+      elementVideos[i].onlick = function () {
+
+        console.log(this);
+      }
+    }
+
+}
+
+// window.addEventListener("contextmenu", function (e) {
+//   e.preventDefault();
+// });
+// window.addEventListener("keydown", function (e) {
+//   if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+//       e.preventDefault();
+//   }
+// });
+
 
 
