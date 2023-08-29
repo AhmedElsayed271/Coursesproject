@@ -176,33 +176,35 @@
             <div class="title">
                 <h2 class="fw-bold">الدورات الحاليه</h2>
             </div>
-            <div class="courses">
+            <div class="courses row">
                 @foreach ($courses as $course)
-                    <a href="{{ route('course.details', $course->id) }}">
-                        <div class="card col-md-3 p-0 cardCourse mt-4  mx-auto cursor-pointer border-0"
-                            data-aos="flip-left" data-aos-delay="500">
-                            <div class="courseImage">
-                                <img src="{{ $course->image }}" class="card-img" alt="PythonImg">
-                            </div>
-                            <div class="card-body ">
-
-                                <div class="cardContent">
-                                    <h5 class="card-title fw-bold text-end ">{{ $course->name }}</h5>
-                                    <p>{{ $course->descriptoin }}</p>
-                                    <h3 class="fw-bold h6">السعر : <del>{{ $course->old_price }}</del>
-                                        {{ $course->price }}
-                                        <span class="text-start">EGP</span>
-                                    </h3>
-                                    <div class="buy">
-                                        <a href="{{ route('checkout', $course->id) }}"><button
-                                                class="btn main-btn fw-bold">اشتري
-                                                الان</button></a>
-                                    </div>
+                    <div class="">
+                        <a href="{{ route('course.details', $course->id) }}">
+                            <div class="card col-md-3 p-0 cardCourse mt-4  mx-auto cursor-pointer border-0"
+                                data-aos="flip-left" data-aos-delay="500">
+                                <div class="courseImage">
+                                    <img src="{{ $course->image }}" class="card-img" alt="PythonImg">
                                 </div>
+                                <div class="card-body ">
 
+                                    <div class="cardContent">
+                                        <h5 class="card-title fw-bold text-end ">{{ $course->name }}</h5>
+                                        <p>{{ $course->descriptoin }}</p>
+                                        <h3 class="fw-bold h6">السعر : <del>{{ $course->old_price }}</del>
+                                            {{ $course->price }}
+                                            <span class="text-start">EGP</span>
+                                        </h3>
+                                        <div class="buy">
+                                            <a href="{{ route('checkout', $course->id) }}"><button
+                                                    class="btn main-btn fw-bold">اشتري
+                                                    الان</button></a>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 @endforeach
             </div>
         </section>
@@ -252,17 +254,17 @@
                 </form>
             </div>
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif 
-        @if(Session::has('success'))
-            <div class="alert alert-success">{{ Session::get('success') }}</div>
-        @endif
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if (Session::has('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @endif
         </section>
     </div>
 @endsection

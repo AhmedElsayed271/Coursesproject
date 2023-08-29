@@ -140,11 +140,13 @@ hr{
 .authIcons button i{
     color: var(--primary-color);
 }
-.authIcons button .fa-facebook-f {
+.authIcons .fa-facebook-f {
   background-color: #197ECE;
+  color: #fff;
 }
-.authIcons button .fa-google {
+.authIcons .fa-google {
   background-color: #DD4B39;
+  color: #fff;
 }
 /* Videos Page */
 .accordion-button::after {
@@ -203,3 +205,12 @@ footer{
 #linkCourse {
   text-transform: lowercase;
 }
+
+/* .facebook-icon {
+  background-color: #197ECE;
+  color: #fff;
+}
+.google-icon {
+  background-color: #DD4B39;
+  color: #fff;
+} */
