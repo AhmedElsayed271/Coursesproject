@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use Exception;
 use App\Models\User;
@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\RequestWithdrawalWallet;
 
-class RequestWithdrawalWalletController extends Controller
+class RequestwalletController extends Controller
 {
 
 

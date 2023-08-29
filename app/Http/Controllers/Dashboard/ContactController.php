@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
-class ContactUsController extends Controller
+class ContactController extends Controller
 {
     
     public function index() 
