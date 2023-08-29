@@ -48,7 +48,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::delete('videos/destory/{video_id}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('orders', [OrderController::class, 'index'])->name('order.index');
     Route::get('request-withdrawal', [RequestWithdrawalWalletController::class, 'index'])->name('request.withdrawal.index');
-    Route::get('request-withdrawal/Accept', [RequestWithdrawalWalletController::class, 'accept'])->name('request.withdrawal.accept');
+    Route::post('request-withdrawal/transfer/{id}', [RequestWithdrawalWalletController::class, 'transfer'])->name('request.withdrawal.transfer');
+    Route::get('request-withdrawal/transfered', [RequestWithdrawalWalletController::class, 'transfered'])->name('request.withdrawal.transfered');
     Route::get('contact-us/index', [ContactUsController::class, 'index'])->name('contact.index');
     Route::delete('contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact.delete');
 });

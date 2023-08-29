@@ -66,6 +66,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="{{ route('request.withdrawal.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Request Withdrawal</p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="{{ route('contact.index') }}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Complaints</p>

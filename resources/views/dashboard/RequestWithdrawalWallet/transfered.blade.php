@@ -22,7 +22,7 @@
                         @include('dashboard.alerts.error')
                     </div>
                     <div class="col-sm-12">
-                        <a href="{{ route('request.withdrawal.transfered') }}" class="btn btn-primary" style="margin-bottom: 20px">Transfered</a>
+                        <a href="{{ route('request.withdrawal.index') }}" class="btn btn-primary" style="margin-bottom: 20px">back</a>
                     </div>
                     <!-- left column -->
                     <div class="col-md-12">
@@ -42,7 +42,6 @@
                                             <th>email</th>
                                             <th>phone</th>
                                             <th>amount</th>
-                                            <th colspan="1">opeation</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,12 +52,6 @@
                                                 <td>{{ $request->user->email }}</td>
                                                 <td>{{ $request->phone }}</td>
                                                 <td>{{ $request->amount }}</td>
-                                                <td>
-                                                    <form action="{{ route('request.withdrawal.transfer',$request->id) }}" method="post">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-success">Transfer</button>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         @empty
                                             There are no Categories to display

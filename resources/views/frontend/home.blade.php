@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'home')
+@section('title', 'Home')
 
 @section('content')
     <div class="container">
