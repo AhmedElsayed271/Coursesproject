@@ -88,11 +88,11 @@ if (marketing) {
     let ElementLink = document.getElementById("linkCourse");
 
     constOptoinSelected = document.querySelector("#marketing option[selected]");
-
+    
     let selectedOption = this.options[this.selectedIndex];
 
     linkOfCourse = selectedOption.getAttribute('data-link');
-
+    
     ElementLink.value = linkOfCourse;
 
   };
@@ -100,12 +100,16 @@ if (marketing) {
 
 const elementVideos = document.querySelectorAll('[data-name]');
 
+let titleVideo = document.getElementById("titleVideo");
 if (elementVideos) {
 
-    for(i = 0;i  < elementVideos.length; i++) {
-      elementVideos[i].onlick = function () {
+  console.log(elementVideos.length);
 
-        console.log(this);
+    for(i = 0;i  < elementVideos.length; i++) {
+      console.log("test");
+      elementVideos[i].onclick = function () {
+
+        titleVideo.textContent = this.textContent;
       }
     }
 

@@ -52,7 +52,7 @@
                     </video>
                 @endisset
 
-                <p class="fw-bold mt-3">مقدمه عن لغه Html</p>
+                <p id="titleVideo" class="fw-bold mt-3">{{ $sections[0]->videos[0]->name }}</p>
             </main>
         </div>
     </div>

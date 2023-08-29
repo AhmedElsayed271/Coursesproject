@@ -35,16 +35,28 @@
                             الدخول</a>
                     </li>
                 @endguest
-                <li class="nav-item">
-                    <a class="nav-link active fs-6 fw-bold" aria-current="page"
-                        href="{{ route('profile.index') }}">حسابي
-                    </a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link active fs-6 fw-bold" aria-current="page"
+                            href="{{ route('profile.index') }}">حسابي
+                        </a>
+                    </li>
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link active fs-6 fw-bold" aria-current="page" href="{{ route('marketing') }}">اعمل
                         كمسوق
                         الكتروني</a>
                 </li>
+                @auth
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="nav-link active fs-6 fw-bold" style="margin-top: 5px;">
+                                <p>تسجيل خروج</p>
+                            </button>
+                        </form>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>
