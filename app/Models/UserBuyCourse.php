@@ -10,7 +10,7 @@ class UserBuyCourse extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['user_id','course_id'];
 
 
     public function course()

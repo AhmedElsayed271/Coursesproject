@@ -6,11 +6,12 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\UserBuyCourse;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\UserBuyCourse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules\RequiredIf;
 
@@ -36,12 +37,31 @@ class PaymentPaymobController extends Controller
             return redirect()->back()->with(['error' => 'لقد اشتريت هذا الكوبس بالفعل']);
         }
 
+        if ($request->buyBy && !empty($request->buyBy)) {
+
+
+            $user = User::find($request->buyBy);
+
+            if (!$user) {
+                return redirect()->route('home');
+            }
+
+            Cookie::queue('marketingBy', $request->buyBy, 60 * 24 * 30);
+
+          
+          
+        }
+
+        $marketingBy = Cookie::get('marketingBy');
+
 
         if ($request->paymentMethod == 'credit') {
 
             $response = $this->paymentStepsIntegration($course, $user, 4111767);
 
             $token = $response['token'];
+ 
+           
 
             Order::create([
                 'user_id' => Auth::id(),
@@ -49,7 +69,7 @@ class PaymentPaymobController extends Controller
                 'price' =>  $course->price,
                 'currency' =>  "EGP",
                 'order_id' =>  $response['order_id'],
-                'buyBy' =>  $request->buyBy,
+                'buyBy' =>  $marketingBy,
             ]);
             return view('payment.payByCredit', compact('token'));
         }
@@ -61,7 +81,7 @@ class PaymentPaymobController extends Controller
             'course_id' => $course->id,
             'price' =>  $course->price,
             'order_id' =>  $response['order_id'],
-            'buyBy' =>  $request->buyBy,
+            'buyBy' =>  $marketingBy,
         ]);
 
         if (!$response['redirect_url']) {

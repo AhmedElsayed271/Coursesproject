@@ -12,6 +12,7 @@ use App\Http\Controllers\website\VideoCourseController;
 use App\Http\Controllers\payment\PaymentPaymobController;
 use App\Http\Controllers\website\CourseDetailsController;
 use App\Http\Controllers\website\PagesController;
+use Illuminate\Support\Facades\Cookie;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +62,10 @@ Route::middleware('auth:web')->group(function () {
 
 Route::get('/test', function () {
 
+  // Cookie::queue('marketingBy', 1, 60 * 24 * 30);
 
+  $marketingBy = Cookie::get('marketingBy');
+  return $marketingBy;
   Auth::login(User::find(1));
 
 

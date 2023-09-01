@@ -194,11 +194,19 @@
                                             {{ $course->price }}
                                             <span class="text-start">EGP</span>
                                         </h3>
+                                        @if(App\Models\Course::isUserBuyCourse($course->id))
+                                        <div class="buy">
+                                            <a href="{{ route('video.course', $course->id) }}"><button
+                                                    class="btn main-btn fw-bold">
+                                                    مشاهده</button></a>
+                                        </div>
+                                        @else
                                         <div class="buy">
                                             <a href="{{ route('checkout', $course->id) }}"><button
                                                     class="btn main-btn fw-bold">اشتري
                                                     الان</button></a>
                                         </div>
+                                        @endif
                                     </div>
 
                                 </div>

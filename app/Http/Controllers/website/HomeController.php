@@ -11,8 +11,7 @@ class HomeController extends Controller
     public function home()
     {
 
-        $courses = Course::all();
-
+        $courses = Course::with('usersBuyCourse')->get();
 
         return view('frontend.home', compact('courses'));
     }
