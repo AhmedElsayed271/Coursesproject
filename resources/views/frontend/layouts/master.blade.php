@@ -30,9 +30,15 @@
 <body dataSrc="home">
     @include('frontend.includes.navbar')
     @yield('content')
+
+    @php
+        $noFooter = [Request::is('checkout'),Request::is('login'),Request::is('login')]
+    @endphp
+    @if(!Request::is('checkout/*') && !Request::is('login') && !Request::is('register'))
     <!-- Start Footer -->
     @include('frontend.includes.footer')
     <!-- End Footer -->
+    @endif
     <!-- Boostarp js File -->
     <script src="{{  asset('assets/frontend/css/bootstrap/js/bootstrap.bundle.min.js')  }}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -8,7 +8,7 @@
         <div class="container h-100 py-5">
 
 
-            <div class="col">
+            <div class="col" style="margin-top: 80px">
                 <div class="card shopping-cart" style="border-radius: 15px">
                     <div class="card-body text-black ">
                         <div class="row d-flex justify-content-center align-items-center h-100">
