@@ -52,7 +52,12 @@
                     </video>
                 @endisset
 
+                @if (count($sections) == 0)
+                <p id="titleVideo" class="fw-bold mt-3"></p>
+                @else
                 <p id="titleVideo" class="fw-bold mt-3">{{ $sections[0]->videos[0]->name }}</p>
+                @endif
+          
             </main>
         </div>
     </div>
