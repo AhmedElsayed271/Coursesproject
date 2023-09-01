@@ -29,10 +29,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {   
-        
+ 
         $request->authenticate('web');
 
         $request->session()->regenerate();
+
+        Auth::logoutOtherDevices($request->password);
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
