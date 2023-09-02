@@ -24,6 +24,11 @@ class ContactUsController extends Controller
             'name' => "required|min:3",
             'email' => "required|email",
             'message' => "required",
+        ], [
+            'name.required' => 'الاسم مطلوب',
+            'name.min' => 'الاسم يجب الا يقل عن ثلاثة احرف',
+            'email.required' => 'البريد الاكتروني مطلوب',
+            'message.required' => 'يجب ادخال الرسالة'
         ]);
 
 

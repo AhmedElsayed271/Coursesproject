@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('contact-us/index', [ContactUsController::class, 'index'])->name('contact.index');
     Route::delete('contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact.delete');
 });
+
 Route::group(['middleware' => 'auth:web'], function () {
 
     Route::post('request-withdrawal/create', [RequestWithdrawalWalletController::class, 'create'])->name('request.withdrawal.create');
