@@ -45,7 +45,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => 'البريد الاكترني او كلمة السر غير صحيحة',
             ]);
         }
 
@@ -81,5 +81,14 @@ class LoginRequest extends FormRequest
     public function throttleKey(): string
     {
         return Str::transliterate(Str::lower($this->input('email')).'|'.$this->ip());
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'يجب ادخال البريد الاكتروني',
+            'email.email' => 'هذا الحفل يجب ان يكون بريدالكتروني',
+            'password.required' => 'يجب ادخال  كلمة السر',
+        ];
     }
 }

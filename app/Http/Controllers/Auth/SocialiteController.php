@@ -29,8 +29,8 @@ class SocialiteController extends Controller
         if(!$user){
             $user = User::create([
                 "full_name" => $getUser->name,
-                "first_name" => $getUser->user['given_name'] ?? "",
-                "last_name" => $getUser->user['family_name'] ?? "",
+                "first_name" => $getUser->user['given_name'] ?? "first name",
+                "last_name" => $getUser->user['family_name'] ?? "last name",
                 'provider_id' => $getUser->id,
                 'provider' => $provider,
                 "email" => $getUser->email,

@@ -42,6 +42,11 @@ class RequestWithdrawalWalletController extends Controller
                 'gt:10',
             ],
          
+        ],[
+            'phone.required' => 'رقم الهاتف مطلوب',
+            'phone.min' => 'رقم الهاتف يجب الا يقل عن 11 حرف',
+            'phone.max' => 'رقم الهاتف يجب الا يزيد عن 11 حرف',
+            'amount.required' => 'يجب ادخال المبلغ المراد سحبه',
         ]);
 
         try {
