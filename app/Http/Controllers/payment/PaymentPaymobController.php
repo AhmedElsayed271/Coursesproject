@@ -22,7 +22,7 @@ class PaymentPaymobController extends Controller
 
         $validate = $request->validate([
             'paymentMethod' => 'required|in:wallet,credit',
-            'phone' => ['required_if:paymentMethod,wallet','numeric'],
+            'phone' => ['nullable','required_if:paymentMethod,wallet','numeric'],
         ],[
             'phone.required' => 'رقم الهاتف مطلوب',
             'phone.required_if' => 'اذا كنت سوف تدفع عن طربقة المحفظة فيجب عليك ادخال رقم المحفظة',
