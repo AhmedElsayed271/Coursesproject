@@ -3,16 +3,17 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\PagesController;
 use App\Http\Controllers\website\CheckoutController;
 use App\Http\Controllers\website\MarketingController;
 use App\Http\Controllers\website\ProfileUserController;
 use App\Http\Controllers\website\VideoCourseController;
 use App\Http\Controllers\payment\PaymentPaymobController;
 use App\Http\Controllers\website\CourseDetailsController;
-use App\Http\Controllers\website\PagesController;
-use Illuminate\Support\Facades\Cookie;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::get('/checkout/{course_id}', [CheckoutController::class, 'checkout'])->na
 
 
 Route::get('/state', [PaymentPaymobController::class, 'state'])->name('state');
+
+Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
 
 
 

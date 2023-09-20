@@ -47,6 +47,10 @@
                         كمسوق
                         الكتروني</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active fs-6 fw-bold" aria-current="page" href="{{ route('privacy') }}">
+                        سياسة الخصوصيه</a>
+                </li>
                 @auth
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="post">

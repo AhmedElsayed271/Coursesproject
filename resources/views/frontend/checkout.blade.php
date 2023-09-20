@@ -12,7 +12,7 @@
                 <div class="card shopping-cart" style="border-radius: 15px">
                     <div class="card-body text-black ">
                         <div class="row d-flex justify-content-center align-items-center h-100">
-                          
+                           
                             <div class="row">
                                 <div class="col-lg-6 px-5 py-4">
                                     <h3 class="mb-5 pt-2 text-center fw-bold">المشتريات</h3>
