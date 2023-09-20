@@ -40,6 +40,14 @@ return [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => env('FACEBOOK_REDIRECT_URI'),
+    ],
+    'paymob' => [
+        'integration_id_wallet' => env('PAYMOB_INTEGRATION_ID_WALLET'),
+        'integration_id_card' => env('PAYMOB_INTEGRATION_ID_CARD'),
+        'hmac' => env('PAYMOB_HMAC'),
+        'api_key' => env('PAYMOB_API_KEY'),
+        'secret_key' => env('PAYMOB_SECRET_KEY'),
+        'public_key' => env('PAYMOB_PUBLIC_KEY'),
     ]
 
 ];

@@ -64,7 +64,9 @@ class PaymentPaymobController extends Controller
 
         if ($request->paymentMethod == 'credit') {
 
-            $response = $this->paymentStepsIntegration($course, $user, 4111767);
+            $integration_id_card = config('services.paymob.integration_id_card');
+
+            $response = $this->paymentStepsIntegration($course, $user, $integration_id_card);
 
             $token = $response['token'];
  
@@ -101,14 +103,15 @@ class PaymentPaymobController extends Controller
 
     public function paymentStepsIntegration($course, $user, $integration_id)
     {
-
+        
+        $apiKey = config('services.paymob.api_key');
 
         $response = Http::withHeaders([
 
             "Content-Type" => "application/json",
 
         ])->post('https://accept.paymob.com/api/auth/tokens', [
-            'api_key' => 'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T0RneE1qUXlMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuMUtBMnJ5V2NoRjhwVEtyOTU5M05UV3dQMUZVTzRrNVk1blVUWklfYVNlOUZjcjRMa0ZqcmMzOEVVZ1czemhuYkZSM0J0TlA5TUp4ZmdBZzB1WXYzWkE=',
+            'api_key' => $apiKey,
         ]);
 
         $token = $response['token'];
@@ -126,7 +129,7 @@ class PaymentPaymobController extends Controller
         ]);
 
         $id = $response['id'];
-
+    
         $response = Http::withHeaders([
 
             "Content-Type" => "application/json",
@@ -166,7 +169,9 @@ class PaymentPaymobController extends Controller
 
     public function PayByWallet($course, $user, $phone)
     {
-        $response = $this->paymentStepsIntegration($course, $user, 4121943);
+        $integration_id_wallet = config('services.paymob.integration_id_wallet');
+
+        $response = $this->paymentStepsIntegration($course, $user, $integration_id_wallet);
 
         $token = $response['token'];
 
@@ -300,7 +305,9 @@ class PaymentPaymobController extends Controller
 
         $secure_hash = $json->hmac;
 
-        $hamc = hash_hmac('sha512', $str, 'BE1EDE20CEDC0DEF69ABFFCA5B4971D0');
+        $hmac_code = config('services.paymob.hmac');
+
+        $hamc = hash_hmac('sha512', $str, $hmac_code);
 
         return $hamc == $secure_hash ? true : false;
     }
