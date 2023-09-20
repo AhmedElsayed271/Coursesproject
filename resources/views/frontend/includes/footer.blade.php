@@ -40,6 +40,9 @@
                         <a href="https:/wa.me/+201220407108" class="ms-2" target="_blank"><i class="fa-brands fa-square-whatsapp fs-3" style="color:#25D366"></i></a>
                         <a href="mailto:yossefadel713@gmail.com" target="_blank" class="ms-2"><i class="fa-solid fa-envelope fs-3 text-dark"></i></a>
                     </div>
+                    <div class="phone">
+                        <p>رقم الهاتف: +20 122 040 7108</p>
+                    </div>
             </div>
         </div>
     </div>
