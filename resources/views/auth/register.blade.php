@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Course Details')
+@section('title', 'register')
 
 @section('content')
 <section class="vh-100">

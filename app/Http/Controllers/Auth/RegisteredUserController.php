@@ -36,6 +36,14 @@ class RegisteredUserController extends Controller
             'phone' => ['required', 'string', 'max:11','min:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'full_name.required' => 'الاسم مطلوب',
+            'phone.required' => 'رقم الهاتف مطلوب',
+            'email.required' => 'البريد الالكتروني مطلوب',
+            'full_name.unique' => 'هذا البريد الاكتروني مأخوذ',
+            'email.email' => 'هذا الحقل يجب ان يكون بريدا الكترونيا',
+            'password.required' => 'كلمة السر مطلوبه',
+            'password.confirmed' => 'يجب ان تكون كلمتا السر متطابقتان',
         ]);
 
        
