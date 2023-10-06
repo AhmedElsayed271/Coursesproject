@@ -1,14 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileAdminController;
+use App\Http\Controllers\Dashboard\OrderController;
+use App\Http\Controllers\Dashboard\VideoController;
+use App\Http\Controllers\Dashboard\CoursesController;
+use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ContactUsController;
-use App\Http\Controllers\Dashboard\CoursesController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Dashboard\OrderController;
 use App\Http\Controllers\Dashboard\RequestWithdrawalWalletController;
-use App\Http\Controllers\Dashboard\SectionController;
-use App\Http\Controllers\Dashboard\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,11 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('request-withdrawal/transfered', [RequestWithdrawalWalletController::class, 'transfered'])->name('request.withdrawal.transfered');
     Route::get('contact-us/index', [ContactUsController::class, 'index'])->name('contact.index');
     Route::delete('contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact.delete');
+    
+    
+    Route::get('profile/editAdmin', [ProfileAdminController::class, 'edit'])->name('dashboard.profile.edit');
+   
+    Route::post('profile/updateAdmin', [ProfileAdminController::class, 'update'])->name('dashboard.profile.update');
 });
 
 Route::group(['middleware' => 'auth:web'], function () {

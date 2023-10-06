@@ -78,6 +78,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="{{ route('dashboard.profile.edit') }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li class="nav-item">
             <form action="{{ route('logoutAdmin') }}" method="post">
                 @csrf
                 <button class="nav-link" type="submit" style="border: 0;
