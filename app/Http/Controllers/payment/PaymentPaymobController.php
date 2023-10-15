@@ -143,17 +143,17 @@ class PaymentPaymobController extends Controller
             'billing_data' => [
                 "apartment" => "803",
                 "email" => $user->email,
-                "floor" => "42",
+                "floor" => "NA",
                 "first_name" => $user->first_name ?? "mohammed",
-                "street" => "Ethan Land",
-                "building" => "8028",
-                "phone_number" => "+86(8)9135210487",
-                "shipping_method" => "PKG",
-                "postal_code" => "01898",
-                "city" => "Cairo",
-                "country" => "CR",
+                "street" => "NA",
+                "building" => "NA",
+                "phone_number" => $user->phone ?? "",
+                "shipping_method" => "NA",
+                "postal_code" => "NA",
+                "city" => "NA",
+                "country" => "NA",
                 "last_name" => $user->last_name ?? "ahmed",
-                "state" => "Utah"
+                "state" => "NA"
             ],
             "integration_id" => $integration_id,
             "lock_order_when_paid" => "false"

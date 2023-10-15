@@ -14,9 +14,14 @@
                         @csrf
                         <h3 class="mb-5">انشاء حساب</h3>
                         <div class="form-outline mb-4">
-                            <input name="full_name" type="text" class="form-control form-control-lg"
-                                placeholder="الاسم" value="{{ old('full_name') }}" />
-                                     <x-input-error :messages="$errors->get('full_name')" class="mt-2"  />
+                            <input name="first_name" type="text" class="form-control form-control-lg"
+                                placeholder="الاسم الاول" value="{{ old('first_name') }}" />
+                                     <x-input-error :messages="$errors->get('first_name')" class="mt-2"  />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input name="last_name" type="text" class="form-control form-control-lg"
+                                placeholder="الاسم الاخير" value="{{ old('last_name') }}" />
+                                     <x-input-error :messages="$errors->get('last_name')" class="mt-2"  />
                         </div>
                         <div class="form-outline mb-4">
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg"
